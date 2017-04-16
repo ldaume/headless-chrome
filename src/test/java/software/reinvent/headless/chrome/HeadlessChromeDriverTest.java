@@ -44,5 +44,6 @@ public class HeadlessChromeDriverTest {
         final File pngFile = new File("/tmp/screenshot.png");
         headlessChromeDriver.screenshot(pngFile);
         assertThat(pngFile).exists();
+        assertThat(pngFile.length()).isGreaterThan(1_000_000);
     }
 }

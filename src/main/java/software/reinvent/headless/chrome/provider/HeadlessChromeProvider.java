@@ -6,6 +6,7 @@ import com.typesafe.config.Config;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import software.reinvent.commons.config.ConfigLoader;
 
 import java.io.File;
 
@@ -19,7 +20,7 @@ import static org.openqa.selenium.chrome.ChromeOptions.CAPABILITY;
  * @author <a href="mailto:lenny@reinvent.software">Leonard Daume</a>
  */
 public class HeadlessChromeProvider implements Provider<ChromeDriver> {
-    private final Config config;
+    private Config config;
 
     @Inject
     public HeadlessChromeProvider(Config config) {
@@ -28,6 +29,9 @@ public class HeadlessChromeProvider implements Provider<ChromeDriver> {
 
     @Override
     public ChromeDriver get() {
+        if (config == null) {
+            config = ConfigLoader.load();
+        }
 
         if (config.hasPath("webdriver.chrome.driver")) {
             setProperty("webdriver.chrome.driver", config.getString("webdriver.chrome.driver"));
@@ -40,7 +44,13 @@ public class HeadlessChromeProvider implements Provider<ChromeDriver> {
 
         final ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.setBinary(config.hasPath("webdriver.chrome.binary") ? config.getString("webdriver.chrome.binary") : "/usr/bin/google-chrome-unstable");
-        chromeOptions.addArguments("--headless", "--disable-gpu", "--incognito", "window-size=1920,1200");
+        final String windowSize;
+        if (config.hasPath("chrome.window.size")) {
+            windowSize = config.getString("chrome.window.size");
+        } else {
+            windowSize = "1920,1200";
+        }
+        chromeOptions.addArguments("--headless", "--disable-gpu", "--incognito", "window-size=" + windowSize);
 
         final DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         capabilities.setCapability(CAPABILITY, chromeOptions);
