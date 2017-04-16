@@ -4,12 +4,13 @@ name := """headless-chrome"""
 // orgnization name (e.g., the package name of the project)
 organization := "software.reinvent"
 
-version := "0.1.0"
+version := "0.2.0-SNAPSHOT"
+//version := "0.1.0"
 
 scalaVersion := "2.12.1"
 
 // project description
-description := "Template for a sbt/maven dependency."
+description := "Implementation of the new headless chrome with chromedriver and selenium."
 
 // Enables publishing to maven repo
 publishMavenStyle := true
