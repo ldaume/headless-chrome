@@ -7,6 +7,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import java.io.File;
+
 import static com.google.common.io.Resources.getResource;
 import static java.lang.System.setProperty;
 import static org.openqa.selenium.chrome.ChromeOptions.CAPABILITY;
@@ -30,7 +32,10 @@ public class HeadlessChromeProvider implements Provider<ChromeDriver> {
         if (config.hasPath("webdriver.chrome.driver")) {
             setProperty("webdriver.chrome.driver", config.getString("webdriver.chrome.driver"));
         } else {
-            setProperty("webdriver.chrome.driver", getResource(this.getClass(), "chromedriver_linux64").getFile());
+            final String chromedriver_linux64 = getResource(this.getClass(), "chromedriver_linux64").getFile();
+            new File(chromedriver_linux64).setExecutable(true);
+            setProperty("webdriver.chrome.driver", chromedriver_linux64);
+
         }
 
         final ChromeOptions chromeOptions = new ChromeOptions();
