@@ -2,16 +2,21 @@ package software.reinvent.headless.chrome.provider;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
+
 import com.typesafe.config.Config;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import software.reinvent.commons.config.ConfigLoader;
 
 import java.io.File;
+import java.io.IOException;
+
+import software.reinvent.commons.config.ConfigLoader;
 
 import static com.google.common.io.Resources.getResource;
 import static java.lang.System.setProperty;
+import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 import static org.openqa.selenium.chrome.ChromeOptions.CAPABILITY;
 
 /**
@@ -36,14 +41,24 @@ public class HeadlessChromeProvider implements Provider<ChromeDriver> {
         if (config.hasPath("webdriver.chrome.driver")) {
             setProperty("webdriver.chrome.driver", config.getString("webdriver.chrome.driver"));
         } else {
-            final String chromedriver_linux64 = getResource(this.getClass(), "chromedriver_linux64").getFile();
-            new File(chromedriver_linux64).setExecutable(true);
-            setProperty("webdriver.chrome.driver", chromedriver_linux64);
+            try {
+                final File tempDriver = new File("/tmp/headless_chromedriver");
+                if (!tempDriver.exists()) {
+                    copyInputStreamToFile(getResource(this.getClass(), "chromedriver_linux64").openStream(), tempDriver);
+                    tempDriver.setExecutable(true);
+                }
+                setProperty("webdriver.chrome.driver", tempDriver.getPath());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
 
         }
 
         final ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setBinary(config.hasPath("webdriver.chrome.binary") ? config.getString("webdriver.chrome.binary") : "/usr/bin/google-chrome-unstable");
+        chromeOptions.setBinary(config.hasPath("webdriver.chrome.binary")
+                                ? config.getString("webdriver.chrome.binary")
+                                : "/usr/bin/google-chrome-unstable");
         final String windowSize;
         if (config.hasPath("chrome.window.size")) {
             windowSize = config.getString("chrome.window.size");
