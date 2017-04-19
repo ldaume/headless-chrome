@@ -65,7 +65,7 @@ public class HeadlessChromeProvider implements Provider<ChromeDriver> {
         } else {
             windowSize = "1920,1200";
         }
-        chromeOptions.addArguments("--headless", "--disable-gpu", "--incognito", "window-size=" + windowSize);
+        chromeOptions.addArguments("--headless", "--disable-gpu", "--no-sandbox", "--incognito", "window-size=" + windowSize);
 
         final DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         capabilities.setCapability(CAPABILITY, chromeOptions);
