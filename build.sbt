@@ -48,7 +48,7 @@ libraryDependencies ++= Seq(
   "software.reinvent" % "commons" % "0.3.2",
 
   // chrome
-  "org.seleniumhq.selenium" % "selenium-chrome-driver" % "3.3.1",
+  "org.seleniumhq.selenium" % "selenium-chrome-driver" % "3.4.0",
   "com.assertthat" % "selenium-shutterbug" % "0.6",
 
   // TEST
