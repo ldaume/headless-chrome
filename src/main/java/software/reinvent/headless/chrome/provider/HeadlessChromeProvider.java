@@ -16,6 +16,7 @@ import java.io.IOException;
 import software.reinvent.commons.config.ConfigLoader;
 
 import static com.google.common.io.Resources.getResource;
+import static java.lang.System.getProperty;
 import static java.lang.System.setProperty;
 import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 import static org.openqa.selenium.chrome.ChromeOptions.CAPABILITY;
@@ -54,8 +55,6 @@ public class HeadlessChromeProvider implements Provider<ChromeDriver> {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-
-
         }
 
         final ChromeOptions chromeOptions = new ChromeOptions();
@@ -72,7 +71,11 @@ public class HeadlessChromeProvider implements Provider<ChromeDriver> {
         final boolean useHeadless = !config.hasPath("chrome.headless") || config.hasPath("chrome.headless") && config.getBoolean(
                 "chrome.headless");
         if (useHeadless) {
-            chromeOptions.addArguments("--headless", "--disable-gpu", "--incognito", "window-size=" + windowSize);
+            chromeOptions.addArguments("--headless",
+                                       "--disable-gpu",
+                                       "--incognito",
+                                       "--whitelisted-ips=''",
+                                       "window-size=" + windowSize);
         } else {
             LOG.warn("Will not use headless mode.");
             chromeOptions.addArguments("--incognito", "window-size=" + windowSize);
@@ -81,7 +84,7 @@ public class HeadlessChromeProvider implements Provider<ChromeDriver> {
         final DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         capabilities.setCapability(CAPABILITY, chromeOptions);
 
-        LOG.info("Providing chromedriver from {}", binary);
+        LOG.info("Providing chromedriver from {} for {}.", getProperty("webdriver.chrome.driver"), binary);
         return new ChromeDriver(capabilities);
     }
 }

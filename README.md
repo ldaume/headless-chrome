@@ -82,5 +82,5 @@ resolvers ++= Seq(
 
 ### Dependency
 ```scala
-libraryDependencies += "software.reinvent" % "headless-chrome" % "0.1.3"
+libraryDependencies += "software.reinvent" % "headless-chrome" % "0.1.4"
 ```
