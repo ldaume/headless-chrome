@@ -42,6 +42,7 @@ The config uses the [typesafe config](https://github.com/typesafehub/config).
 | webdriver.chrome.driver | The path to the chromedriver binary       |      bundled in resources       |        :x:         |
 | webdriver.chrome.binary | The path to the chrome binary             | /usr/bin/google-chrome-unstable | :white_check_mark: |
 | chrome.window.size      | The window size as string: "width,height" |           "1920,1200"           |        :x:         |
+| chrome.headless         | True for headless mode                    |           true                  |        :x:         |
 
 ## Maven
 
@@ -81,5 +82,5 @@ resolvers ++= Seq(
 
 ### Dependency
 ```scala
-libraryDependencies += "software.reinvent" % "headless-chrome" % "0.1.2"
+libraryDependencies += "software.reinvent" % "headless-chrome" % "0.1.3"
 ```
