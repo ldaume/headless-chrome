@@ -49,7 +49,7 @@ libraryDependencies ++= Seq(
 
   // chrome
   "org.seleniumhq.selenium" % "selenium-chrome-driver" % "3.4.0",
-  "com.assertthat" % "selenium-shutterbug" % "0.6",
+  "com.assertthat" % "selenium-shutterbug" % "0.6.1",
 
   // TEST
   "org.assertj" % "assertj-core" % "3.7.0" % "test",
