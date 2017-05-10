@@ -4,8 +4,8 @@ name := """headless-chrome"""
 // orgnization name (e.g., the package name of the project)
 organization := "software.reinvent"
 
-//version := "0.2.0-SNAPSHOT"
-version := "0.1.4"
+version := "0.2.0-SNAPSHOT"
+//version := "0.1.4"
 
 scalaVersion := "2.12.1"
 
@@ -52,7 +52,7 @@ libraryDependencies ++= Seq(
   "com.assertthat" % "selenium-shutterbug" % "0.6",
 
   // TEST
-  "org.assertj" % "assertj-core" % "3.6.2" % "test",
+  "org.assertj" % "assertj-core" % "3.7.0" % "test",
   "org.assertj" % "assertj-guava" % "3.1.0" % "test" exclude("com.google.guava", "guava"),
   "com.novocode" % "junit-interface" % "0.11" % "test->default",
   "org.jukito" % "jukito" % "1.5" % "test"
