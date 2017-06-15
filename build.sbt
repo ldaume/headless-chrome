@@ -45,7 +45,7 @@ resolvers ++= Seq(
 libraryDependencies ++= Seq(
 
   // Commons
-  "software.reinvent" % "commons" % "0.3.2",
+  "software.reinvent" % "commons" % "0.3.3",
 
   // chrome
   "org.seleniumhq.selenium" % "selenium-chrome-driver" % "3.4.0",
