@@ -4,8 +4,8 @@ name := """headless-chrome"""
 // orgnization name (e.g., the package name of the project)
 organization := "software.reinvent"
 
-version := "0.2.0-SNAPSHOT"
-//version := "0.1.4"
+//version := "0.2.0-SNAPSHOT"
+version := "0.1.4"
 
 scalaVersion := "2.12.1"
 
