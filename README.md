@@ -6,8 +6,10 @@ Headless Chrome
 - [Abstract](#abstract)
 - [Status](#status)
 - [Usage](#usage)
-	- [Guice Binding](#guice)
+	- [Guice Binding](#guice-binding)
 	- [Config](#config)
+		- [Chrome](#chrome)
+		- [ChromeDriver](#chromedriver)
 	- [Maven](#maven)
 		- [Repo](#repo)
 		- [Dependency](#dependency)
@@ -43,6 +45,17 @@ The config uses the [typesafe config](https://github.com/typesafehub/config).
 | webdriver.chrome.binary | The path to the chrome binary             | /usr/bin/google-chrome-unstable | :white_check_mark: |
 | chrome.window.size      | The window size as string: "width,height" |           "1920,1200"           |        :x:         |
 
+### Chrome
+
+Use Chrome version 60.
+
+For Windows one could use the portable App from [here](https://sites.google.com/a/chromium.org/chromedriver/downloads).
+
+### ChromeDriver
+
+Use the ChromeDriver version 2.30 which is available [here](https://sites.google.com/a/chromium.org/chromedriver/downloads).
+
+
 ## Maven
 
 ### Repo
@@ -64,7 +77,7 @@ The config uses the [typesafe config](https://github.com/typesafehub/config).
 <dependency>
   <groupId>software.reinvent</groupId>
   <artifactId>headless-chrome</artifactId>
-  <version>0.1.0</version>
+  <version>0.2.0</version>
 </dependency>
 ```
 
@@ -81,5 +94,5 @@ resolvers ++= Seq(
 
 ### Dependency
 ```scala
-libraryDependencies += "software.reinvent" % "headless-chrome" % "0.1.2"
+libraryDependencies += "software.reinvent" % "headless-chrome" % "0.2.0"
 ```

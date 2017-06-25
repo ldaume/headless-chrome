@@ -5,7 +5,7 @@ name := """headless-chrome"""
 organization := "software.reinvent"
 
 //version := "0.2.0-SNAPSHOT"
-version := "0.1.2"
+version := "0.2.0"
 
 scalaVersion := "2.12.1"
 
@@ -45,14 +45,14 @@ resolvers ++= Seq(
 libraryDependencies ++= Seq(
 
   // Commons
-  "software.reinvent" % "commons" % "0.3.2",
+  "software.reinvent" % "commons" % "0.3.3",
 
   // chrome
-  "org.seleniumhq.selenium" % "selenium-chrome-driver" % "3.3.1",
-  "com.assertthat" % "selenium-shutterbug" % "0.6",
+  "org.seleniumhq.selenium" % "selenium-chrome-driver" % "3.4.0",
+  "com.assertthat" % "selenium-shutterbug" % "0.6.1" exclude("org.seleniumhq.selenium", "selenium-java"),
 
   // TEST
-  "org.assertj" % "assertj-core" % "3.6.2" % "test",
+  "org.assertj" % "assertj-core" % "3.8.0" % "test",
   "org.assertj" % "assertj-guava" % "3.1.0" % "test" exclude("com.google.guava", "guava"),
   "com.novocode" % "junit-interface" % "0.11" % "test->default",
   "org.jukito" % "jukito" % "1.5" % "test"
