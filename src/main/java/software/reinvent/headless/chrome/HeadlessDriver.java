@@ -33,7 +33,7 @@ public class HeadlessDriver {
             setProperty("webdriver.chrome.driver", configToUse.getString("webdriver.chrome.driver"));
         } else {
             try {
-                final String osName = config.getString("os.name");
+                final String osName = configToUse.getString("os.name");
                 final String driverBinaryName;
                 if (StringUtils.containsIgnoreCase(osName, "windows")) {
                     driverBinaryName = "chromedriver_win32-2.30";

@@ -77,7 +77,7 @@ Use the ChromeDriver version 2.30 which is available [here](https://sites.google
 <dependency>
   <groupId>software.reinvent</groupId>
   <artifactId>headless-chrome</artifactId>
-  <version>0.2.0</version>
+  <version>0.2.1</version>
 </dependency>
 ```
 
@@ -94,5 +94,5 @@ resolvers ++= Seq(
 
 ### Dependency
 ```scala
-libraryDependencies += "software.reinvent" % "headless-chrome" % "0.2.0"
+libraryDependencies += "software.reinvent" % "headless-chrome" % "0.2.1"
 ```
