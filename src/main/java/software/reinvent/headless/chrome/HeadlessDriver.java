@@ -36,11 +36,11 @@ public class HeadlessDriver {
                 final String osName = configToUse.getString("os.name");
                 final String driverBinaryName;
                 if (StringUtils.containsIgnoreCase(osName, "windows")) {
-                    driverBinaryName = "chromedriver_win32-2.30";
+                    driverBinaryName = "chromedriver_win32-2.31.exe";
                 } else if (StringUtils.containsIgnoreCase(osName, "mac")) {
-                    driverBinaryName = "chromedriver_mac-2.30";
+                    driverBinaryName = "chromedriver_mac-2.31";
                 } else {
-                    driverBinaryName = "chromedriver_linux64-2.30";
+                    driverBinaryName = "chromedriver_linux64-2.31";
                 }
 
                 final File tempDriver = new File("/tmp/" + driverBinaryName);
