@@ -53,7 +53,7 @@ For Windows one could use the portable App from [here](https://sites.google.com/
 
 ### ChromeDriver
 
-Use the ChromeDriver version 2.30 which is available [here](https://sites.google.com/a/chromium.org/chromedriver/downloads).
+Use the ChromeDriver version 2.31 which is available [here](https://sites.google.com/a/chromium.org/chromedriver/downloads).
 
 
 ## Maven
@@ -77,7 +77,7 @@ Use the ChromeDriver version 2.30 which is available [here](https://sites.google
 <dependency>
   <groupId>software.reinvent</groupId>
   <artifactId>headless-chrome</artifactId>
-  <version>0.2.1</version>
+  <version>0.2.2</version>
 </dependency>
 ```
 
@@ -94,5 +94,5 @@ resolvers ++= Seq(
 
 ### Dependency
 ```scala
-libraryDependencies += "software.reinvent" % "headless-chrome" % "0.2.1"
+libraryDependencies += "software.reinvent" % "headless-chrome" % "0.2.2"
 ```
