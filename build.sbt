@@ -21,7 +21,7 @@ pomIncludeRepository := { _ => false }
 
 publishTo := {
   val nexus = "https://maven.reinvent-software.de/nexus/"
-  if (version.value.trim.endsWith("SNAPSHOT"))
+  if ((version in ThisBuild).value.endsWith("SNAPSHOT")) {
     Some("snapshots" at nexus + "content/repositories/snapshots")
   else
     Some("releases" at nexus + "content/repositories/releases")
