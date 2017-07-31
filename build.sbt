@@ -5,7 +5,9 @@ name := """headless-chrome"""
 organization := "software.reinvent"
 
 version := "0.3.0-SNAPSHOT"
+version in ThisBuild := "0.3.0-SNAPSHOT"
 // version := "0.2.2"
+// version in ThisBuild := "0.2.2"
 
 scalaVersion := "2.12.3"
 
