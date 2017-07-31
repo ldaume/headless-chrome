@@ -37,6 +37,7 @@ crossPaths := false
 // This forbids including Scala related libraries into the dependency
 autoScalaLibrary := false
 
+aetherOldVersionMethod := true
 
 resolvers ++= Seq(
   Resolver.mavenLocal,
