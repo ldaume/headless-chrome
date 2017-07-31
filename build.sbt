@@ -7,7 +7,7 @@ organization := "software.reinvent"
 //version := "0.2.0-SNAPSHOT"
 version := "0.2.2"
 
-scalaVersion := "2.12.1"
+scalaVersion := "2.12.3"
 
 // project description
 description := "Implementation of the new headless chrome with chromedriver and selenium."
@@ -45,7 +45,7 @@ resolvers ++= Seq(
 libraryDependencies ++= Seq(
 
   // Commons
-  "software.reinvent" % "commons" % "0.3.3",
+  "software.reinvent" % "commons" % "0.3.4",
 
   // chrome
   "org.seleniumhq.selenium" % "selenium-chrome-driver" % "3.4.0",
