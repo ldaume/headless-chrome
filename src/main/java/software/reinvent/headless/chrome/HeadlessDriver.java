@@ -66,6 +66,9 @@ public class HeadlessDriver {
         } else {
             windowSize = "1920,1200";
         }
+        if (configToUse.hasPath("webdriver.user.agent")) {
+            chromeOptions.addArguments("--user-agent=" + configToUse.getString("webdriver.user.agent"));
+        }
         chromeOptions.addArguments("--headless", "--disable-gpu", "--no-sandbox", "--incognito", "window-size=" + windowSize);
 
         final DesiredCapabilities capabilities = DesiredCapabilities.chrome();
