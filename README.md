@@ -32,7 +32,7 @@ Google Chrome version 59+ contains a real headless mode with no need of any disp
 # Usage
 
 ## Repo
-Just add the following [maven central](https://mvnrepository.com/artifact/software.reinvent/commons) dependency.
+Just add the following [maven central](https://mvnrepository.com/artifact/software.reinvent/headless-chrome) dependency.
 
 ### SBT
 Add dependency to `build.sbt`.
