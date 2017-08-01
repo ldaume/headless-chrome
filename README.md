@@ -16,12 +16,6 @@ Headless Chrome
 	- [Config](#config)
 		- [Chrome](#chrome)
 		- [ChromeDriver](#chromedriver)
-	- [Maven](#maven)
-		- [Repo](#repo)
-		- [Dependency](#dependency)
-	- [SBT](#sbt)
-		- [Repo](#repo)
-		- [Dependency](#dependency)
 
 <!-- /TOC -->
 
