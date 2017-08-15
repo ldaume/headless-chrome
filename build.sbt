@@ -6,10 +6,10 @@ name := """headless-chrome"""
 // orgnization name (e.g., the package name of the project)
 organization := "software.reinvent"
 
-//version := "0.4.0-SNAPSHOT"
-//version in ThisBuild := "0.4.0-SNAPSHOT"
-version := "0.3.1"
-version in ThisBuild := "0.3.1"
+version := "0.4.0-SNAPSHOT"
+version in ThisBuild := "0.4.0-SNAPSHOT"
+//version := "0.3.1"
+//version in ThisBuild := "0.3.1"
 
 scalaVersion := "2.12.3"
 
@@ -52,9 +52,9 @@ disablePlugins(AetherPlugin)
 publishTo := {
   val nexus = "https://maven.reinvent-software.de/nexus/"
   if (version.value.trim.endsWith("SNAPSHOT")) {
-    Some("snapshots" at nexus + "content/repositories/snapshots")
+    Some(Opts.resolver.sonatypeSnapshots)
   } else {
-    Some(Opts.resolver.sonatypeStaging)
+    Some(Opts.resolver.sonatypeReleases)
   }
 }
 
@@ -62,8 +62,8 @@ overridePublishBothSettings
 
 overridePublishSignedBothSettings
 
-credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
-//credentials += Credentials(Path.userHome / ".ivy2" / ".credentials.sonatype")
+//credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
+credentials += Credentials(Path.userHome / ".ivy2" / ".credentials.sonatype")
 
 // Do not append Scala versions to the generated artifacts
 crossPaths := false
