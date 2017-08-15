@@ -69,7 +69,10 @@ public class HeadlessDriver {
         if (configToUse.hasPath("webdriver.user.agent")) {
             chromeOptions.addArguments("--user-agent=" + configToUse.getString("webdriver.user.agent"));
         }
-        chromeOptions.addArguments("--headless", "--disable-gpu", "--no-sandbox", "--incognito", "window-size=" + windowSize);
+        if (!configToUse.hasPath("chrome.headless") || (configToUse.hasPath("chrome.headless") && configToUse.getBoolean("chrome.headless"))) {
+            chromeOptions.addArguments("--headless");
+        }
+        chromeOptions.addArguments("--disable-gpu", "--no-sandbox", "--incognito", "window-size=" + windowSize);
 
         final DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         capabilities.setCapability(CAPABILITY, chromeOptions);

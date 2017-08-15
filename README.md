@@ -31,7 +31,7 @@ Just add the following [maven central](https://mvnrepository.com/artifact/softwa
 ### SBT
 Add dependency to `build.sbt`.
 ```bash
-libraryDependencies += "software.reinvent" % "headless-chrome" % "0.3.0"
+libraryDependencies += "software.reinvent" % "headless-chrome" % "x.y.z"
 ```
 
 ### Maven
@@ -39,7 +39,7 @@ libraryDependencies += "software.reinvent" % "headless-chrome" % "0.3.0"
 <dependency>
     <groupId>software.reinvent</groupId>
     <artifactId>headless-chrome</artifactId>
-    <version>0.3.0</version>
+    <version>x.y.z</version>
 </dependency
 ```
 
@@ -58,6 +58,7 @@ The config uses the [typesafe config](https://github.com/typesafehub/config).
 | webdriver.chrome.binary | The path to the chrome binary             | /usr/bin/google-chrome-unstable | :white_check_mark: |
 | chrome.window.size      | The window size as string: "width,height" |           "1920,1200"           |        :x:         |
 | webdriver.user.agent    | The user agent used in chrome             |  default HeadlessChrome agent   |        :x:         |
+| chrome.headless         | Set true to run chrome in headless mode   |              true               |        :x:         |
 
 ### Chrome
 
