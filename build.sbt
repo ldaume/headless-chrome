@@ -6,10 +6,10 @@ name := """headless-chrome"""
 // orgnization name (e.g., the package name of the project)
 organization := "software.reinvent"
 
-version := "0.4.0-SNAPSHOT"
-version in ThisBuild := "0.4.0-SNAPSHOT"
-//version := "0.3.1"
-//version in ThisBuild := "0.3.1"
+// version := "0.4.0-SNAPSHOT"
+// version in ThisBuild := "0.4.0-SNAPSHOT"
+version := "0.3.2"
+version in ThisBuild := "0.3.2"
 
 scalaVersion := "2.12.3"
 
@@ -26,7 +26,7 @@ libraryDependencies ++= Seq(
   "software.reinvent" % "commons" % "0.3.5",
 
   // chrome
-  "org.seleniumhq.selenium" % "selenium-chrome-driver" % "3.4.0",
+  "org.seleniumhq.selenium" % "selenium-chrome-driver" % "3.5.3",
   "com.assertthat" % "selenium-shutterbug" % "0.6.1" exclude("org.seleniumhq.selenium", "selenium-java"),
 
   // TEST
