@@ -8,8 +8,8 @@ organization := "software.reinvent"
 
 // version := "0.4.0-SNAPSHOT"
 // version in ThisBuild := "0.4.0-SNAPSHOT"
-version := "0.3.2"
-version in ThisBuild := "0.3.2"
+version := "0.3.3"
+version in ThisBuild := "0.3.3"
 
 scalaVersion := "2.12.3"
 
