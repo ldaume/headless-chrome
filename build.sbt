@@ -8,13 +8,13 @@ organization := "software.reinvent"
 
 // version := "0.4.0-SNAPSHOT"
 // version in ThisBuild := "0.4.0-SNAPSHOT"
-version := "0.3.3"
-version in ThisBuild := "0.3.3"
+version := "0.3.4"
+version in ThisBuild := "0.3.4"
 
-scalaVersion := "2.12.3"
+scalaVersion := "2.12.4"
 
 // project description
-description := "Implementation of the new headless chrome with chromedriver and selenium."
+description := "Implementation of the headless chrome with chromedriver and selenium."
 
 resolvers ++= Seq(
   Resolver.mavenLocal
@@ -26,7 +26,7 @@ libraryDependencies ++= Seq(
   "software.reinvent" % "commons" % "0.3.5",
 
   // chrome
-  "org.seleniumhq.selenium" % "selenium-chrome-driver" % "3.5.3",
+  "org.seleniumhq.selenium" % "selenium-chrome-driver" % "3.6.0",
   "com.assertthat" % "selenium-shutterbug" % "0.6.1" exclude("org.seleniumhq.selenium", "selenium-java"),
 
   // TEST
