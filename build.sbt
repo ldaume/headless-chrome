@@ -8,8 +8,8 @@ organization := "software.reinvent"
 
 // version := "0.4.0-SNAPSHOT"
 // version in ThisBuild := "0.4.0-SNAPSHOT"
-version := "0.3.4"
-version in ThisBuild := "0.3.4"
+version := "0.3.5"
+version in ThisBuild := "0.3.5"
 
 scalaVersion := "2.12.4"
 
@@ -23,11 +23,11 @@ resolvers ++= Seq(
 libraryDependencies ++= Seq(
 
   // Commons
-  "software.reinvent" % "commons" % "0.3.5",
+  "software.reinvent" % "commons" % "0.3.6",
 
   // chrome
-  "org.seleniumhq.selenium" % "selenium-chrome-driver" % "3.6.0",
-  "com.assertthat" % "selenium-shutterbug" % "0.6.1" exclude("org.seleniumhq.selenium", "selenium-java"),
+  "org.seleniumhq.selenium" % "selenium-chrome-driver" % "3.8.1",
+  "com.assertthat" % "selenium-shutterbug" % "0.7" exclude("org.seleniumhq.selenium", "selenium-java"),
 
   // TEST
   "org.assertj" % "assertj-core" % "3.8.0" % "test",
