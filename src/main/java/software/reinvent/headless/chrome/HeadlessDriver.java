@@ -46,7 +46,7 @@ public class HeadlessDriver {
         } else if (StringUtils.containsIgnoreCase(osName, "mac")) {
           driverBinaryName = "chromedriver_mac-2.33";
         } else {
-          driverBinaryName = "chromedriver_linux_64-2.33";
+          driverBinaryName = "chromedriver_linux_64-73.0.3683.68";
         }
 
         final File tempDriver = new File(FileUtils.getTempDirectory(), driverBinaryName);
